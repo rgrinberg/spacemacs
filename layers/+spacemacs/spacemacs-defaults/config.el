@@ -19,6 +19,7 @@
 (setq global-auto-revert-non-file-buffers t
       auto-revert-verbose nil)
 (add-to-list 'global-auto-revert-ignore-modes 'Buffer-menu-mode)
+(add-to-list 'global-auto-revert-ignore-modes 'dired-mode)
 
 ;; Make dired "guess" target directory for some operations, like copy to
 ;; directory visited in other split buffer.
