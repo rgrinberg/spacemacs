@@ -1,0 +1,9 @@
+#+TITLE: Circe layer
+
+* Description
+Layer for circe irc client
+* Key bindings
+
+| Key Binding | Description |
+|-------------+-------------|
+| ~SPC a i c~ | Start Circe |
