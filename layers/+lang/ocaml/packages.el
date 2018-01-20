@@ -59,8 +59,9 @@
     :defer t
     :init
     (progn
+      (add-to-list 'xref-backend-functions 'merlin-xref-backend)
       (add-to-list 'spacemacs-jump-handlers-tuareg-mode
-                'spacemacs/merlin-locate)
+                   'xref-find-definitions)
       (add-hook 'tuareg-mode-hook 'merlin-mode)
       (spacemacs/set-leader-keys-for-major-mode 'tuareg-mode
         "cp" 'merlin-project-check
