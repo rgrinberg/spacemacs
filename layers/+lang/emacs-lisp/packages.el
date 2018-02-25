@@ -29,7 +29,7 @@
         (ielm :location built-in)
         macrostep
         nameless
-        overseer
+        ;; overseer
         parinfer
         semantic
         smartparens
