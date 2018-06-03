@@ -12,7 +12,11 @@
 (setq coq-packages
       '(
         (company-coq :requires company)
-        proof-general
+        (proof-general :location (recipe
+                                  :fetcher github
+                                  :repo "ProofGeneral/PG"
+                                  :branch "async"
+                                  :files ("*")))
         smartparens
         vi-tilde-fringe
         ))
