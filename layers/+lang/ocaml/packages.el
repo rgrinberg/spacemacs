@@ -10,20 +10,21 @@
 ;;; License: GPLv3
 
 (setq ocaml-packages
-      '(
-        ;; auto-complete
-        company
-        flycheck
-        flycheck-ocaml
-        ggtags
-        counsel-gtags
-        helm-gtags
-        merlin
-        ocp-indent
-        smartparens
-        tuareg
-        utop
-        ))
+  '(
+    ;; auto-complete
+    company
+    flycheck
+    flycheck-ocaml
+    ggtags
+    counsel-gtags
+    helm-gtags
+    merlin
+    merlin-eldoc
+    ocp-indent
+    smartparens
+    tuareg
+    utop
+    ))
 
 (defun ocaml/post-init-company ()
   (when (configuration-layer/package-used-p 'merlin)
@@ -82,6 +83,14 @@
       (spacemacs/declare-prefix-for-mode 'tuareg-mode "mg" "goto")
       (spacemacs/declare-prefix-for-mode 'tuareg-mode "mh" "help")
       (spacemacs/declare-prefix-for-mode 'tuareg-mode "mr" "refactor"))))
+
+(defun ocaml/post-init-imenu ()
+  (use-package merlin-imenu
+    :hook (merlin-mode . merlin-use-merlin-imenu)))
+
+(defun ocaml/init-merlin-eldoc ()
+  (use-package merlin-eldoc
+   :hook (merlin-mode . merlin-eldoc-setup)))
 
 (defun ocaml/init-ocp-indent ()
   (use-package ocp-indent
